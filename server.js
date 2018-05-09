@@ -238,7 +238,9 @@ function createComment(url, request) {
   const requestComment = request.body && request.body.comment;
   const response = {};
 
-  if (requestComment && requestComment.body && requestComment.articleId && database.articles[requestComment.articleId] && requestComment.username && database.users[requestComment.username]) {
+  if (requestComment && requestComment.body && requestComment.articleId &&
+    database.articles[requestComment.articleId] && requestComment.username &&
+    database.users[requestComment.username]) {
     const comment = {
       id: database.nextCommentId++,
       body: requestComment.body,
